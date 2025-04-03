@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSM | Feed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/src/scss/styles.css">
+</head>
+    <header>
+        <a href="Index.html" class="col-md-4"><h1>TSM</h1></a>
+        <div class="container d-flex flex-wrap">
+            <div class="m-2">
+                <input type="text" class="form-control" placeholder="search...">
+            </div>
+            <div class="m-2">
+                <select name="Filter" id="Filter" class="form-select"> 
+                    <option class="form-label" value="ID">Filter by id</option> 
+                    <option class="form-label" value="user">Filter by user</option> 
+                </select>
+            </div>
+        </div>
+    </header>
+    <body>
+        <main class="d-flex flex-column min-vh-100">
+            <section class="container">
+                <h2 class="mt-4 text-center">Feed</h2>
+                <form class="container card mt-4 p-4 w-100">
+                    <div class="card-header text-center bg-oceanBlue text-white">
+                        <h3 class="mb-0">Share Your Thoughts</h3>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="title" class="form-label">Post Title</label>
+                        <input type="text" id="title" name="title" class="form-control rounded-3" placeholder="Title of your post" required>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="postContent" class="form-label">Post Content</label>
+                        <textarea id="postContent" name="postContent" class="form-control rounded-3" placeholder="Content of your post" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-purple mt-4 mb-4 w-100">Submit</button>
+                </form>
+                <div class="postContainer mt-5">
+                    <div class="card mb-3 shadow-sm rounded-3">
+                        <div class="card-header bg-oceanBlue text-white">
+                            <h5 class="mb-0">Sample Post Title</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>This is the content of the sample post</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="position-absolute bottom-0 start-50 translate-middle-x">
+                <p class="blockquote-footer text-white">Håvard Vavik, 2025 ©</p>
+            </div>
+        </footer>
+        <script type="module" src="/index.js"></script>
+    </body>
+</html>
