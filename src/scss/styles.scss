@@ -51,6 +51,7 @@ footer {
     border: 2px solid $oceanBlue; 
 }
 
+
 .card-header {
     background-color: $oceanBlue; 
     color: $White;
@@ -59,18 +60,29 @@ footer {
     border-radius: 12px 12px 0 0;
 }
 
-.btn-purple {
+.btn {
     background-color: $oceanBlue;  
     color: $White;
+    border: 0px;
     font-weight: bold;
-    border-radius: 50px;
     transition: all 0.3s ease;
 }
 
-.btn-purple:hover {
+.btn:hover {
     background-color: $purple;
     border-color: $purple;
     color: $White;
+}
+
+.editDeleteBtn, #logoutBtn {
+    background-color: $purple;
+}
+
+
+#reactionBtn {
+background-color: white;
+border-radius: 4px;
+border-color: $oceanBlue;
 }
 
 .form-control, .form-select {

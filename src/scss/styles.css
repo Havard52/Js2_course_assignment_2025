@@ -57,18 +57,28 @@ footer {
   border-radius: 12px 12px 0 0;
 }
 
-.btn-purple {
+.btn {
   background-color: #2C5DBF;
   color: #E7E7E7;
+  border: 0px;
   font-weight: bold;
-  border-radius: 50px;
   transition: all 0.3s ease;
 }
 
-.btn-purple:hover {
+.btn:hover {
   background-color: #7756BF;
   border-color: #7756BF;
   color: #E7E7E7;
+}
+
+.editDeleteBtn, #logoutBtn {
+  background-color: #7756BF;
+}
+
+#reactionBtn {
+  background-color: white;
+  border-radius: 4px;
+  border-color: #2C5DBF;
 }
 
 .form-control, .form-select {
