@@ -22,8 +22,15 @@ const postIdInput = document.getElementById('postId');
 const logoutBtn = document.getElementById('logoutBtn');
 const searchInput = document.getElementById('searchInput');
 const filterSelect = document.getElementById('filterSelect');
+const searchBtn = document.getElementById('searchBtn');
 
 let allPosts = [];
+
+searchBtn.addEventListener('click', () => {
+  console.log("Search button clicked")
+  const filteredPosts = filterPosts();
+  renderPosts(filteredPosts);
+});
 
 logoutBtn.addEventListener('click', () => {
   localStorage.clear();
@@ -71,14 +78,21 @@ filterSelect.addEventListener('change', () => renderPosts(filterPosts()));
 function filterPosts() {
   const searchTerm = searchInput.value.toLowerCase();
   const filterBy = filterSelect.value;
-
   return allPosts.filter(post => {
-    if (!filterBy) return true;
-    const value = post[filterBy]?.toLowerCase() || '';
-    return value.includes(searchTerm);
+    if (!searchTerm) return true;
+    if (filterBy === "title") {
+      return post.title?.toLowerCase().includes(searchTerm);
+    }
+    if (filterBy === "author") {
+      return post.author?.name?.toLowerCase().includes(searchTerm);
+    }
+    return (
+      post.title?.toLowerCase().includes(searchTerm) ||
+      post.author?.name?.toLowerCase().includes(searchTerm)
+    );
   }
-);
-}
+);}
+
 
 async function fetchAndRenderPosts() {
   const res = await fetch(`${API_BASE_URL}${API_POSTS_ENDPOINT}?sort=created&sortOrder=desc&_author=true`, {

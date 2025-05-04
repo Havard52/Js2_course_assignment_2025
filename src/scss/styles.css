@@ -65,14 +65,23 @@ footer {
   transition: all 0.3s ease;
 }
 
+.editDeleteBtn, #logoutBtn {
+  background-color: #7756BF;
+}
+
+#searchBtn {
+  background-color: white;
+  color: black;
+}
+
+#searchBtn:hover {
+  background-color: #22CCF2;
+}
+
 .btn:hover {
   background-color: #7756BF;
   border-color: #7756BF;
   color: #E7E7E7;
-}
-
-.editDeleteBtn, #logoutBtn {
-  background-color: #7756BF;
 }
 
 #reactionBtn {

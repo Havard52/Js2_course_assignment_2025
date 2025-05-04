@@ -68,14 +68,25 @@ footer {
     transition: all 0.3s ease;
 }
 
+
+
+.editDeleteBtn, #logoutBtn{
+    background-color: $purple;
+}
+
+#searchBtn {
+    background-color: white;
+    color: black;
+}
+
+#searchBtn:hover {
+    background-color: $lightBlue;
+}
+
 .btn:hover {
     background-color: $purple;
     border-color: $purple;
     color: $White;
-}
-
-.editDeleteBtn, #logoutBtn {
-    background-color: $purple;
 }
 
 
