@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TSM | Home</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/src/scss/styles.css"/>
+</head>
+<body>
+  <header class="d-flex justify-content-between align-items-center p-3">
+    <h1>TSM</h1>
+  </header>
+  <main class="container mt-5">
+    <form id="authForm" class="card p-4">
+      <h2 class="text-center">Register or Login</h2>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" class="form-control" type="text" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" class="form-control" type="email" required />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input id="password" class="form-control" type="password" required />
+      </div>
+      <button id="registerBtn" class="btn btn-primary mb-2">Register</button>
+      <div id="registerMessage" class=""></div>
+      <button id="loginBtn" class="btn btn-success">Login</button>
+      <div id="loginMessage" class=""></div>
+    </form>
+  </main>
+  <script type="module" src="/index.js"></script>
+</body>
+</html>
+

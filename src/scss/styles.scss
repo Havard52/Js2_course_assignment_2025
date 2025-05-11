@@ -1,0 +1,147 @@
+@import 'variables';
+
+body {
+    background: $White;
+    font-family: "PT Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: $White;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 2.5rem;
+}
+
+header {
+    background-color: $oceanBlue;  
+    color: $White;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: $oceanBlue; 
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    font-size: 0.9rem;
+    color: $White;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.card {
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border: 2px solid $oceanBlue; 
+}
+
+
+.card-header {
+    background-color: $oceanBlue; 
+    color: $White;
+    padding: 1rem 1.5rem;
+    font-size: 1.3rem;
+    border-radius: 12px 12px 0 0;
+}
+
+.btn {
+    background-color: $oceanBlue;  
+    color: $White;
+    border: 0px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+
+
+.editDeleteBtn, #logoutBtn{
+    background-color: $purple;
+}
+
+#searchBtn {
+    background-color: white;
+    color: black;
+}
+
+#searchBtn:hover {
+    background-color: $lightBlue;
+}
+
+.btn:hover {
+    background-color: $purple;
+    border-color: $purple;
+    color: $White;
+}
+
+
+#reactionBtn {
+background-color: white;
+border-radius: 4px;
+border-color: $oceanBlue;
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #888;
+}
+
+footer p {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    .container {
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card-header {
+        font-size: 1.2rem;
+    }
+
+    .btn-purple {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-header {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn-purple {
+        font-size: 0.85rem;
+    }
+}
