@@ -22,7 +22,7 @@ document.getElementById("registerBtn").addEventListener("click", async (e) =>
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password })
-    });
+    } );
 
     if (!res.ok) throw new Error("Failed to register");
 
@@ -33,7 +33,8 @@ document.getElementById("registerBtn").addEventListener("click", async (e) =>
     registerMessageDiv.textContent = "Ups, somthng went wrong.";
     registerMessageDiv.className = "text-danger mt-2"; 
   }
-});
+}
+);
 
 document.getElementById("loginBtn").addEventListener("click", async (e) => {
   e.preventDefault();
