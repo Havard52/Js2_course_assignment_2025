@@ -36,6 +36,18 @@ document.getElementById("registerBtn").addEventListener("click", async (e) =>
 }
 );
 
+/**
+ * Takes care off user login and API key creation.
+ * Saves acces token and API key as localStorage.
+ * redirects to the main feed.html when its a successful login.
+ * displays error message on failure.
+ *
+ * @param {Event} e - The click event from the "Login" button.
+ *
+ * @example
+ * // Triggered when the #loginBtn is clicked
+ * document.getElementById("loginBtn").addEventListener("click", ...);
+ */
 document.getElementById("loginBtn").addEventListener("click", async (e) => {
   e.preventDefault();
   const email = document.getElementById("email").value;
