@@ -1,6 +1,10 @@
 const API_BASE_URL = 'https://v2.api.noroff.dev';
 const API_POSTS_ENDPOINT = '/social/posts';
 
+/**
+ * Retrieves access token and the API key from localStorage.
+ * Redirects to index.html if itsnot found.
+ */
 const accessToken = localStorage.getItem('accessToken');
 const apiKey = localStorage.getItem('apiKey');
 
@@ -28,16 +32,29 @@ const formMessage = document.getElementById('formMessage');
 
 let allPosts = [];
 
+/**
+ * Takes care off filtering and rendering posts when the search button is clicked on.
+ */
 searchBtn.addEventListener('click', () => {
   const filteredPosts = filterPosts();
   renderPosts(filteredPosts);
 } );
 
+
+/**
+ * Removes all localStorage data, and redirects to login page when logging out.
+ */
 logoutBtn.addEventListener('click', () => {
   localStorage.clear();
   window.location.href = 'index.html';
 });
 
+
+/**
+ * Submits the post form.
+ * Creates or updates a post based on presence of a post ID.
+ * @param {Event} e - The form submission event.
+ */
 postForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -75,6 +92,14 @@ postForm.addEventListener('submit', async (e) => {
 searchInput.addEventListener('input', () => renderPosts(filterPosts()));
 filterSelect.addEventListener('change', () => renderPosts(filterPosts()));
 
+/**
+ * Filters the `allPosts` based on the current search and filter selection.
+ * @returns {Array<Object>} array of filteredd post objects.
+ * 
+ * @example
+ * const results = filterPosts();
+ * renderPosts(results);
+ */
 function filterPosts() {
   const searchTerm = searchInput.value.toLowerCase();
   const filterBy = filterSelect.value;
@@ -96,6 +121,16 @@ function filterPosts() {
   });
 }
 
+/**
+ * Renders a array of posts as cards.
+ * edit/delete functionality for posts owned by the current user.
+ * 
+ * @param {Array<Object>} posts - Array of post objects to render.
+ * @returns {void}
+ * 
+ * @example
+ * renderPosts(allPosts);
+ */
 async function fetchAndRenderPosts() {
   const res = await fetch(`${API_BASE_URL}${API_POSTS_ENDPOINT}?sort=created&sortOrder=desc&_author=true`, {
     headers,
@@ -174,11 +209,7 @@ function renderPosts(posts) {
         } else {
           deleteMessageDiv.textContent = 'Failed to delete post.';
           deleteMessageDiv.className = 'text-danger mt-2';
-        }
-      }
-    })
-  );
-}
+        }}}));}
 
 fetchAndRenderPosts();
 
